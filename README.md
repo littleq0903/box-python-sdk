@@ -1,7 +1,7 @@
 # Box.net API wrapper for Python #
 ---
 
-*This api module is in **developing**, any advice is welcome*
+This api module is in **developing**, any advice is welcome*
 
 ### Usage
 
