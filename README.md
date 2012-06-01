@@ -5,7 +5,7 @@
 
 ### Usage
 
-Developers should apply for an api key while using Box.net API. (Where to apply: [Box.net: Developer Services](https://www.box.com/developers/services)
+Developers should apply for an api key while using Box.net API. (Where to apply: [Box.net: Developer Services](https://www.box.com/developers/services))
 
 	>>> from boxapi import Session
 	>>> api_key = "boxnetapikeyexample"
