@@ -30,6 +30,7 @@ def open_for_auth_ticket(ticket):
     ticket_url = "https://www.box.com/api/1.0/auth/" + ticket
     # TODO: use open browser action instead of print url
     print "Please go to the following url for authentication: %s" % ticket_url
+    return ticket_url
 
 def get_auth_token(api_key, ticket):
     http_params = {

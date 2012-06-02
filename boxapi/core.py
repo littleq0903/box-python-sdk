@@ -14,7 +14,7 @@ class Session(object):
 
     def apply_new_authtoken(self):
         self.ticket = auth.get_ticket(self.api_key)
-        auth.open_for_auth_ticket(self.ticket)
+        self.auth_url = auth.open_for_auth_ticket(self.ticket)
 
     def authorize(self, ticket):
         result = auth.get_auth_token(self.api_key, ticket)
@@ -23,7 +23,11 @@ class Session(object):
         except:
             raise Exception("[Error] Authorizing failed.")
 
-    def action(rest_path, **kwargs):
-        req = Request(rest_path, **kwargs)
+    def action(self, rest_path):
+        params = {
+                'api_key': self.api_key,
+                'auth_token': self.auth_token
+                }
+        req = Request(rest_path, **params)
         req.do()
         return req.result

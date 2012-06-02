@@ -3,13 +3,14 @@
 __author__ = "Colin Su <littleq0903@gmail.com>"
 
 import common
+import json
 import urllib
 from xml.dom.minidom import parseString
 from lib.xml2dict import XML2Dict
 
 
 class Request(object):
-    def __init__(self, rest_path, api_version=2):
+    def __init__(self, rest_path, api_version=2, api_key='', auth_token=''):
         """
         params:
             self.rest_url: the URL part of api request
@@ -19,6 +20,8 @@ class Request(object):
         self.rest_url = common.API_V1_URL
         self.rest_path = rest_path
         self.result_format = 'xml'
+        self.api_key = api_key
+        self.auth_token = auth_token
 
         if api_version == 1:
             self.rest_url = common.API_V1_URL
@@ -27,17 +30,20 @@ class Request(object):
             self.rest_url = common.API_V2_URL
             self.result_format = 'json'
 
-        super().__init__()
 
     def do(self):
-        opener = urllib.urlopen(self.rest_url + self.rest_path)
-        response = opener.read()
+        request_url = (self.rest_url + self.rest_path)
+        opener = urllib.URLopener()
+        opener.addheader('Authorization', 'BoxAuth api_key=%s&auth_token=%s' % (self.api_key, self.auth_token))
+        responsor = opener.open( request_url )
+        response = responsor.read()
         opener.close()
 
         if self.result_format == 'json':
             self.result = json.loads(response)
         elif self.result_format == 'xml':
             self.result = XML2Dict(response)
+        
 
 
 
