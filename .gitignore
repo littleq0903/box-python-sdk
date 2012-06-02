@@ -28,3 +28,6 @@ pip-log.txt
 
 # vim temp file
 .*.swp
+
+# Project specify ignoring
+test_local.py
