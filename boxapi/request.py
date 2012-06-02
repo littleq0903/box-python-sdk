@@ -10,7 +10,7 @@ from lib.xml2dict import XML2Dict
 
 
 class Request(object):
-    def __init__(self, rest_path, api_version=2, api_key='', auth_token=''):
+    def __init__(self, rest_path, api_version=2, api_key='', auth_token='', method="GET", params={}):
         """
         params:
             self.rest_url: the URL part of api request
@@ -22,6 +22,8 @@ class Request(object):
         self.result_format = 'xml'
         self.api_key = api_key
         self.auth_token = auth_token
+        self.method = method
+        self.params = params
 
         if api_version == 1:
             self.rest_url = common.API_V1_URL
@@ -33,9 +35,13 @@ class Request(object):
 
     def do(self):
         request_url = (self.rest_url + self.rest_path)
+        request_params = self.
         opener = urllib.URLopener()
         opener.addheader('Authorization', 'BoxAuth api_key=%s&auth_token=%s' % (self.api_key, self.auth_token))
-        responsor = opener.open( request_url )
+        if self.method == 'GET':
+            responsor = opener.open( request_url + "?" + urllib.urlencode(self.params) )
+        elif self.method == 'POST':
+            responsor = opner.open( request_url, urllib.urlencode(self.params) )
         response = responsor.read()
         opener.close()
 
