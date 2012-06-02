@@ -1,6 +1,8 @@
+## Box.net SDK for Python ##
+
+
 ->![boxapi logo](http://dl.dropbox.com/u/2587385/images/boxapi/boxapi_logo_750.png "Title")<-
 
-## Box.net SDK for Python ##
 
 This api module is in **developing**, any advice is welcome.
 
