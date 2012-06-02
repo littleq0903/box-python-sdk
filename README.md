@@ -1,7 +1,7 @@
 ## Box.net SDK for Python ##
 
 
-![boxapi logo](http://dl.dropbox.com/u/2587385/images/boxapi/boxapi_logo_750.png "Title")
+![boxapi logo](http://dl.dropbox.com/u/2587385/images/boxapi/boxapi_logo_850.png "Title")
 
 
 This api module is in **developing**, any advice is welcome.
@@ -36,10 +36,10 @@ Action is the general function for calling API methods. To operate correctly, yo
 
 ```python
 
-	import boxapi
+import boxapi
 	
-	api = boxapi.Session("<Your API Key>", auth_token="<Your Auth Token>")
-	api.action("/folders/0")
+api = boxapi.Session("<Your API Key>", auth_token="<Your Auth Token>")
+api.action("/folders/0")
 ```
 	
 `api.action()` will return a dictionary which contains the response from the api call, and already has been transformed into dictionary from JSON format.
