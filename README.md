@@ -2,6 +2,8 @@
 
 ---
 
+![boxapi logo](http://dl.dropbox.com/u/2587385/images/boxapi/boxapi_logo_300.png "Title")
+
 This api module is in **developing**, any advice is welcome
 
 ### Authentication
