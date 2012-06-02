@@ -8,5 +8,5 @@ setup(name='boxapi',
         author='Colin Su',
         author_email='littleq0903@gmail.com',
         url='https://github.com/littleq0903/box-python-sdk',
-        packages=['boxapi']
+        packages=['boxapi','boxapi.lib']
         )
