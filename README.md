@@ -19,3 +19,5 @@ After the user authorized your app on the above webpage, you can shoot the `auth
 	>>> session.authorize(ticket)
 	>>> session.auth_token
 	'boxnetauthtokenexample'
+
+Take a look and execute `test.py` for more action detail.
