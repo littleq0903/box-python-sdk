@@ -1,10 +1,11 @@
-## Box.net API wrapper for Python ##
+->![boxapi logo](http://dl.dropbox.com/u/2587385/images/boxapi/boxapi_logo_750.png "Title")<-
 
+## Box.net SDK for Python ##
 
+This api module is in **developing**, any advice is welcome.
 
-![boxapi logo](http://dl.dropbox.com/u/2587385/images/boxapi/boxapi_logo_300.png "Title")
+Box.net SDK for Python made developers could access Box.net v2 RESTful API with Python programming language in a easier way, from authentication to query/update the information of files/folders.
 
-This api module is in **developing**, any advice is welcome
 
 ### Authentication
 
