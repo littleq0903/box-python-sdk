@@ -35,13 +35,13 @@ class Request(object):
 
     def do(self):
         request_url = (self.rest_url + self.rest_path)
-        request_params = self.
+        request_params = self.params
         opener = urllib.URLopener()
         opener.addheader('Authorization', 'BoxAuth api_key=%s&auth_token=%s' % (self.api_key, self.auth_token))
         if self.method == 'GET':
-            responsor = opener.open( request_url + "?" + urllib.urlencode(self.params) )
+            responsor = opener.open( request_url + "?" + urllib.urlencode(request_params) )
         elif self.method == 'POST':
-            responsor = opner.open( request_url, urllib.urlencode(self.params) )
+            responsor = opner.open( request_url, urllib.urlencode(request_params) )
         response = responsor.read()
         opener.close()
 
