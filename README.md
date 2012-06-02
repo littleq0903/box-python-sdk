@@ -35,10 +35,11 @@ Take a look and execute `test.py` for more action detail.
 Action is the general function for calling API methods. To operate correctly, you must know the auth token of the user.
 
 ```python
-import boxapi
+
+	import boxapi
 	
-api = boxapi.Session("<Your API Key>", auth_token="<Your Auth Token>")
-api.action("/folders/0")
+	api = boxapi.Session("<Your API Key>", auth_token="<Your Auth Token>")
+	api.action("/folders/0")
 ```
 	
 `api.action()` will return a dictionary which contains the response from the api call, and already has been transformed into dictionary from JSON format.
@@ -56,7 +57,7 @@ If you didn't fill the field `AUTH_TOKEN`, you will need to authorize by open th
 
 will do the default action `/folders/0`.
 
-	python test.py `/folders/<other_folder_id>`
+	python test.py "/folders/<other_folder_id>"
 	
 will call the action you specified by assigning the first argument and display the response.
 
