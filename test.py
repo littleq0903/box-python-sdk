@@ -1,19 +1,31 @@
 """ Box API testing script """
 
-API_KEY = 'n5hrlxyfxb1iehj15m0sa1ajuyqvicdh'
+API_KEY = '<Your API Key>'
+AUTH_TOKEN = '<Your Auth Token>'
+API_ACTION = '/folders/0'
+
+import sys
+
+if len(sys.argv) > 1:
+    API_ACTION = sys.argv[1]
 
 import boxapi
+import json
 
-api = boxapi.Session(API_KEY)
-api.apply_new_authtoken()
 
-raw_input("After your authorization, press any button...")
+if not AUTH_TOKEN:
+    print "Did not find the auth_token, apply for new one..."
+    api = boxapi.Session(API_KEY)
+    api.apply_new_authtoken()
+    raw_input("After your authorization, press any button...")
+    api.authorize(api.ticket)
+    print "AuthToken: %s" % api.auth_token
 
-api.authorize(api.ticket)
+else:
+    api = boxapi.Session(API_KEY, auth_token=AUTH_TOKEN)
 
-print "AuthToken: %s" % api.auth_token
 
-print api.action('/folders/0')
+print json.dumps(api.action(API_ACTION))
 
 
 
