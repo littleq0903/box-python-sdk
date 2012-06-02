@@ -1,6 +1,6 @@
 ## Box.net API wrapper for Python ##
 
----
+
 
 ![boxapi logo](http://dl.dropbox.com/u/2587385/images/boxapi/boxapi_logo_300.png "Title")
 
