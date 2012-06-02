@@ -13,7 +13,7 @@ import boxapi
 import json
 
 
-if not AUTH_TOKEN:
+if not AUTH_TOKEN or AUTH_TOKEN == '<Your Auth Token>':
     print "Did not find the auth_token, apply for new one..."
     api = boxapi.Session(API_KEY)
     api.apply_new_authtoken()
