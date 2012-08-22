@@ -41,7 +41,7 @@ class Request(object):
         if self.method == 'GET':
             responsor = opener.open( request_url + "?" + urllib.urlencode(request_params) )
         elif self.method == 'POST':
-            responsor = opner.open( request_url, urllib.urlencode(request_params) )
+            responsor = opener.open( request_url, urllib.urlencode(request_params) )
         response = responsor.read()
         opener.close()
 
